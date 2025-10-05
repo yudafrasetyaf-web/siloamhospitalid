@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "doctors": "Cari Dokter",
+    "specializations": "Spesialisasi",
+    "hospitals": "Rumah Sakit",
+    "careers": "Karir",
+    "about": "Tentang",
+    "login": "Masuk",
+    "register": "Daftar",
+    "logout": "Keluar",
+    "myAppointments": "Janji Saya"
+  },
+  "home": {
+    "hero": {
+      "title": "Kesehatan Anda, Prioritas Kami",
+      "subtitle": "Layanan kesehatan standar internasional dengan dokter ahli dan fasilitas modern"
+    }
+  },
+  "about": {
+    "title": "Tentang Sistem Rumah Sakit Siloam",
+    "description": "Platform manajemen rumah sakit modern, aman, dan berstandar internasional untuk pasien, dokter, dan administrator.",
+    "feature1": "Autentikasi aman dan perlindungan data",
+    "feature2": "Booking dan manajemen janji temu online",
+    "feature3": "Direktori dokter dan informasi rumah sakit"
+  },
+  "specializations": {
+    "title": "Spesialisasi Medis",
+    "searchPlaceholder": "Cari spesialisasi..."
+  },
+  "hospitals": {
+    "title": "Rumah Sakit",
+    "location": "Lokasi",
+    "specialties": "Spesialisasi"
+  },
+  "auth": {
+    "login": "Selamat Datang Kembali",
+    "loginSubtitle": "Masukkan kredensial Anda untuk mengakses akun",
+    "register": "Buat Akun",
+    "registerSubtitle": "Bergabung untuk pengalaman layanan kesehatan yang lebih baik"
+  },
+  "footer": {
+    "about": "Penyedia layanan kesehatan berstandar internasional yang berdedikasi memberikan layanan medis terbaik.",
+    "quickLinks": "Tautan Cepat",
+    "services": "Layanan",
+    "contact": "Kontak Kami"
+  }
+}

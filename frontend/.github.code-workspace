@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../.github"
+		},
+		{
+			"path": "../backend"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../nginx"
+		}
+	]
+}

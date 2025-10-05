@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "doctors": "Find Doctors",
+    "specializations": "Specializations",
+    "hospitals": "Hospitals",
+    "careers": "Careers",
+    "about": "About",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "myAppointments": "My Appointments"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Health, Our Priority",
+      "subtitle": "International standard healthcare with expert doctors and modern facilities"
+    }
+  },
+  "about": {
+    "title": "About Siloam Hospital System",
+    "description": "A modern, secure, and international-standard hospital management platform for patients, doctors, and administrators.",
+    "feature1": "Secure authentication and data protection",
+    "feature2": "Online appointment booking and management",
+    "feature3": "Doctor directory and hospital information"
+  },
+  "specializations": {
+    "title": "Medical Specializations",
+    "searchPlaceholder": "Search specializations..."
+  },
+  "hospitals": {
+    "title": "Hospitals",
+    "location": "Location",
+    "specialties": "Specialties"
+  },
+  "auth": {
+    "login": "Welcome Back",
+    "loginSubtitle": "Enter your credentials to access your account",
+    "register": "Create Account",
+    "registerSubtitle": "Join us for better healthcare experience"
+  },
+  "footer": {
+    "about": "Leading healthcare provider with international standards, dedicated to providing excellent medical services.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Us"
+  }
+}

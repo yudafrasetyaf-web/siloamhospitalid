@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: Siloam Hospital Management System API
+  version: 1.0.0
+  description: API documentation for Siloam Hospital System
+servers:
+  - url: http://localhost:4000/api/v1
+paths:
+  /auth/register:
+    post:
+      summary: Register user
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+      responses:
+        '201':
+          description: User registered
+  /auth/login:
+    post:
+      summary: Login user
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login success
+  /doctors:
+    get:
+      summary: List all doctors
+      tags: [Doctors]
+      responses:
+        '200':
+          description: List of doctors
+    post:
+      summary: Create doctor
+      tags: [Doctors]
+      responses:
+        '201':
+          description: Doctor created
+  /appointments:
+    post:
+      summary: Create appointment
+      tags: [Appointments]
+      responses:
+        '201':
+          description: Appointment created
+    get:
+      summary: List appointments
+      tags: [Appointments]
+      responses:
+        '200':
+          description: List of appointments
+  /hospitals:
+    get:
+      summary: List all hospitals
+      tags: [Hospitals]
+      responses:
+        '200':
+          description: List of hospitals
+    post:
+      summary: Create hospital
+      tags: [Hospitals]
+      responses:
+        '201':
+          description: Hospital created
+  /medical-records:
+    post:
+      summary: Create medical record
+      tags: [MedicalRecords]
+      responses:
+        '201':
+          description: Medical record created
+    get:
+      summary: List medical records
+      tags: [MedicalRecords]
+      responses:
+        '200':
+          description: List of medical records
+  /billings:
+    post:
+      summary: Create billing
+      tags: [Billings]
+      responses:
+        '201':
+          description: Billing created
+    get:
+      summary: List billings
+      tags: [Billings]
+      responses:
+        '200':
+          description: List of billings
+  /prescriptions:
+    post:
+      summary: Create prescription
+      tags: [Prescriptions]
+      responses:
+        '201':
+          description: Prescription created
+    get:
+      summary: List prescriptions
+      tags: [Prescriptions]
+      responses:
+        '200':
+          description: List of prescriptions
+  /lab-results:
+    post:
+      summary: Create lab result
+      tags: [LabResults]
+      responses:
+        '201':
+          description: Lab result created
+    get:
+      summary: List lab results
+      tags: [LabResults]
+      responses:
+        '200':
+          description: List of lab results
+  /inpatients:
+    post:
+      summary: Create inpatient
+      tags: [Inpatients]
+      responses:
+        '201':
+          description: Inpatient created
+    get:
+      summary: List inpatients
+      tags: [Inpatients]
+      responses:
+        '200':
+          description: List of inpatients

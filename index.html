@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siloam Hospital Management System - International Standard Healthcare Platform">
+    <title>Siloam Hospital System - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1d2a57 0%, #2d4a7c 50%, #4caf50 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            color: #1d2a57;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 1.3em;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card h2 {
+            color: #1d2a57;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card li:before {
+            content: "✓ ";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .card li:last-child {
+            border-bottom: none;
+        }
+        
+        .status-good {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .status-warning {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .status-info {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(76,175,80,0.4);
+        }
+        
+        .btn-primary {
+            background: #1d2a57;
+        }
+        
+        .btn-primary:hover {
+            background: #2d3a67;
+        }
+        
+        .btn-secondary {
+            background: #2196f3;
+        }
+        
+        .btn-secondary:hover {
+            background: #1976d2;
+        }
+        
+        .tech-stack {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        footer {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .emoji {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1d2a57;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="container">
+        <header role="banner">
+            <div class="emoji" role="img" aria-label="Hospital icon">🏥</div>
+            <h1>Siloam Hospital System</h1>
+            <p>International Standard Hospital Management System</p>
+            <div style="margin-top: 20px;">
+                <span class="badge">Full-Stack</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Docker Ready</span>
+                <span class="badge">Production Ready</span>
+            </div>
+        </header>
+
+        <main id="main-content" role="main">
+        <div class="grid">
+            <div class="card status-good" role="status" aria-live="polite">
+                <div class="emoji" role="img" aria-label="Success icon">✅</div>
+                <h2>Setup Berhasil!</h2>
+                <ul>
+                    <li>Backend API terinstall</li>
+                    <li>Frontend Next.js ready</li>
+                    <li>Database models configured</li>
+                    <li>Docker setup complete</li>
+                    <li>CI/CD pipeline ready</li>
+                </ul>
+            </div>
+
+            <div class="card status-info">
+                <div class="emoji" role="img" aria-label="Target icon">🎯</div>
+                <h2>Fitur Utama</h2>
+                <ul>
+                    <li>Authentication & Authorization</li>
+                    <li>Doctor Directory & Search</li>
+                    <li>Appointment Booking</li>
+                    <li>Hospital Management</li>
+                    <li>Multi-language (ID/EN)</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+
+            <div class="card status-warning">
+                <div class="emoji" role="img" aria-label="Settings icon">⚙️</div>
+                <h2>Cara Menjalankan</h2>
+                <ul>
+                    <li>Install Node.js 18+</li>
+                    <li>Install PostgreSQL atau Docker</li>
+                    <li>Edit .env files</li>
+                    <li>Run: npm install (backend)</li>
+                    <li>Run: npm install (frontend)</li>
+                    <li>Run: npm run dev</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2 style="color: #1d2a57; text-align: center; margin-bottom: 20px;"><span role="img" aria-label="Tools icon">🛠️</span> Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">Node.js 18</div>
+                <div class="tech-item">TypeScript</div>
+                <div class="tech-item">Express.js</div>
+                <div class="tech-item">Next.js 14</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">Sequelize ORM</div>
+                <div class="tech-item">React 18</div>
+                <div class="tech-item">Tailwind CSS</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Nginx</div>
+                <div class="tech-item">Redis</div>
+                <div class="tech-item">GitHub Actions</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="text-align: center;"><span role="img" aria-label="Folder icon">📁</span> Struktur Project</h2>
+            <pre style="background: #f5f5f5; padding: 20px; border-radius: 10px; overflow-x: auto; margin-top: 15px;">
+siloam-hospital-system/
+├── backend/              # Express API
+│   ├── src/
+│   │   ├── controllers/ # Business logic
+│   │   ├── models/      # Database models
+│   │   ├── routes/      # API routes
+│   │   ├── middlewares/ # Auth, validation
+│   │   └── utils/       # Database, logger
+│   └── Dockerfile
+│
+├── frontend/            # Next.js App
+│   ├── src/
+│   │   ├── components/  # UI components
+│   │   ├── pages/       # Next.js pages
+│   │   ├── lib/         # Utils, API
+│   │   └── store/       # State management
+│   └── Dockerfile
+│
+├── nginx/              # Reverse proxy
+├── docker-compose.yml  # Full stack
+└── README.md          # Documentation
+            </pre>
+        </div>
+
+        <div class="btn-group" role="navigation" aria-label="Quick actions">
+            <button class="btn btn-primary" onclick="openReadme()" aria-label="Read documentation">
+                <span role="img" aria-hidden="true">📚</span> Baca README
+            </button>
+            <button class="btn" onclick="openFolder()" aria-label="Open project folder">
+                <span role="img" aria-hidden="true">📁</span> Buka Folder Project
+            </button>
+            <button class="btn btn-secondary" onclick="showCommands()" aria-label="View commands">
+                <span role="img" aria-hidden="true">💻</span> Lihat Commands
+            </button>
+        </div>
+        </main>
+
+        <footer role="contentinfo">
+            <p><strong>Location:</strong> C:\Users\TOSHIBA\CascadeProjects\siloam-hospital-system</p>
+            <p style="margin-top: 10px;">Built with <span role="img" aria-label="love">❤️</span> for better healthcare • © 2025 Siloam Hospitals</p>
+        </footer>
+    </div>
+
+    <script>
+        function openReadme() {
+            alert('Buka file README.md di folder project untuk dokumentasi lengkap!');
+        }
+
+        function openFolder() {
+            alert('Lokasi Project:\nC:\\Users\\TOSHIBA\\CascadeProjects\\siloam-hospital-system\n\nBuka Windows Explorer dan navigate ke folder tersebut.');
+        }
+
+        function showCommands() {
+            const commands = `
+COMMANDS UNTUK MENJALANKAN:
+
+1. DENGAN DOCKER (Recommended):
+   > docker-compose up -d
+   
+2. DEVELOPMENT MODE:
+   Backend:
+   > cd backend
+   > npm install
+   > npm run dev
+   
+   Frontend (terminal baru):
+   > cd frontend
+   > npm install
+   > npm run dev
+
+3. AKSES:
+   - Frontend: http://localhost:3000
+   - Backend: http://localhost:4000
+   - API Docs: http://localhost:4000/api/v1
+
+4. BATCH FILES:
+   - Double click: start-dev.bat
+   - Double click: install-deps.bat
+            `;
+            alert(commands);
+        }
+
+        // Auto show welcome
+        setTimeout(() => {
+            console.log('%c🏥 Siloam Hospital System ', 'background: #1d2a57; color: white; font-size: 20px; padding: 10px;');
+            console.log('%c✅ Setup completed successfully!', 'color: #4caf50; font-size: 14px;');
+            console.log('%cProject location: C:\\Users\\TOSHIBA\\CascadeProjects\\siloam-hospital-system', 'color: #666;');
+        }, 1000);
+    </script>
+</body>
+</html>
